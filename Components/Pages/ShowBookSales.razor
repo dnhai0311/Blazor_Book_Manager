@@ -1,0 +1,74 @@
+﻿@page "/list"
+@inherits ShowBookSalesBase
+@rendermode InteractiveServer
+
+<div class="d-flex justify-content-between align-items-center flex-wrap">
+    <h1>Show List Booksales</h1>
+    <div class="d-flex align-content-center">
+        <div class="d-flex align-items-center me-3">
+            <label for="pageSize" class="me-2 text-nowrap">Hiển thị:</label>
+            <select id="pageSize" class="form-select" @bind="pageSize" style="width: 75px;">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+
+        <input type="text" @bind="searchTerm" placeholder="Tìm theo title" class="form-control" />
+    </div>
+</div>
+
+@if (bookSales == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (!bookSales.Any())
+{
+    <p>No book sales found.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sale in pagedBookSales)
+            {
+                <tr>
+                    <td>@sale.Id</td>
+                    <td>@sale.Title</td>
+                    <td>@sale.Quantity</td>
+                    <td>@sale.Price</td>
+                    <td>
+                        <button class="btn btn-success" @onclick="() => UpdateBookSale(sale.Id)">Edit</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => DeleteBookSale(sale.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-secondary me-2" @onclick="PreviousPage" disabled="@(currentPage == 1)">Prev</button>
+        <span class="text-center py-2">Page @currentPage of @((totalItems + pageSize - 1) / pageSize)</span>
+        <button class="btn btn-secondary ms-2" @onclick="NextPage" disabled="@(currentPage >= (totalItems + pageSize - 1) / pageSize)">Next</button>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-3">
+
+
+        <label for="pageNumber" class="me-2">Đi đến trang:</label>
+        <input type="number" id="pageNumber" min="1" max="@((totalItems + pageSize - 1) / pageSize)" @bind="currentPage" class="form-control" style="width: 75px;" />
+    </div>
+}

@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Codes\\Blazor_Book_Manager\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\showbooksales.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|solutionrelative:components\\pages\\showbooksales.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\showbooksalesbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|solutionrelative:components\\pages\\showbooksalesbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\addbooksalebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|solutionrelative:components\\pages\\addbooksalebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\addbooksale.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|solutionrelative:components\\pages\\addbooksale.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShowBookSalesBase.cs",
+              "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\ShowBookSalesBase.cs",
+              "RelativeDocumentMoniker": "Components\\Pages\\ShowBookSalesBase.cs",
+              "ToolTip": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\ShowBookSalesBase.cs",
+              "RelativeToolTip": "Components\\Pages\\ShowBookSalesBase.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwBwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T16:37:14.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddBookSaleBase.cs",
+              "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddBookSaleBase.cs",
+              "RelativeDocumentMoniker": "Components\\Pages\\AddBookSaleBase.cs",
+              "ToolTip": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddBookSaleBase.cs",
+              "RelativeToolTip": "Components\\Pages\\AddBookSaleBase.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAjwA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T16:36:41.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddBookSale.razor",
+              "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddBookSale.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\AddBookSale.razor",
+              "ToolTip": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddBookSale.razor",
+              "RelativeToolTip": "Components\\Pages\\AddBookSale.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-25T16:36:38.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShowBookSales.razor",
+              "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\ShowBookSales.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\ShowBookSales.razor",
+              "ToolTip": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\ShowBookSales.razor",
+              "RelativeToolTip": "Components\\Pages\\ShowBookSales.razor",
+              "ViewState": "AgIAADEAAAAAAAAAAADwv0IAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-25T16:34:23.362Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
