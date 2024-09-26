@@ -42,6 +42,27 @@ namespace Blazor_BookSale_Manager.Repositories
             return bookSale;
         }
 
+        public async Task<List<Bill>> GetAllBills()
+        {
+            return await this.bookSalesContext.Bills.ToListAsync();
+        }
+
+        public async Task<Bill> GetAllBillDetailsByBillId(int id)
+        {
+            var bill = await this.bookSalesContext.Bills
+                .Include(b => b.BillDetails)
+                    .ThenInclude(bd => bd.BookSale)
+                .FirstOrDefaultAsync(b => b.Id == id);
+
+            if (bill == null)
+            {
+                Console.WriteLine("Null");
+            }
+
+            return bill ?? new Bill(); 
+        }
+
+
         public async Task AddBookSale(BookSale bookSale)
         {
             this.bookSalesContext.Add(bookSale);
@@ -104,5 +125,27 @@ namespace Blazor_BookSale_Manager.Repositories
                 await bookSalesContext.SaveChangesAsync();
             }
         }
+
+        public async Task AddBill(Bill bill)
+        {
+            foreach (var detail in bill.BillDetails)
+            {
+                var bookSale = await this.bookSalesContext.BookSales
+                    .FindAsync(detail.BookSaleId);
+
+                if (bookSale == null)
+                {
+                    return;
+                }
+
+                bookSale.Quantity -= detail.Quantity;
+            }
+
+            this.bookSalesContext.Bills.Add(bill);
+            await this.bookSalesContext.SaveChangesAsync();
+        }
+
+
+
     }
 }

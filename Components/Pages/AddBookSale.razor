@@ -7,7 +7,10 @@
 <h1>@(@bookSale.Id != 0 ? "Edit" : "Add") Book Sale</h1>
 <EditForm Model="bookSale" OnValidSubmit="HandleValidSubmit" FormName="addBookSaleForm">
     <DataAnnotationsValidator />
-    <ValidationSummary />
+    <ValidationMessage For="@(() => bookSale.Title)" class="alert alert-danger" />
+    <ValidationMessage For="@(() => bookSale.Quantity)" class="alert alert-danger" />
+    <ValidationMessage For="@(() => bookSale.Price)" class="alert alert-danger" />
+    <ValidationMessage For="@(() => bookSale.AuthorId)" class="alert alert-danger" />
 
     <div class="form-group row mb-3">
         <label for="txtTitle" class="col-sm-2 col-form-label">Title</label>

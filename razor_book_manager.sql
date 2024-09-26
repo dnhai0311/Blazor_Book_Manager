@@ -1,9 +1,8 @@
---B1: Mở XAMPP lên tạo Database
--- razor_book_manager
---B2: Nếu xài Studio thì Tools -> NuGet... -> ...Console
---Update-Database
+
+-- Nếu xài Studio thì Tools -> NuGet... -> ...Console
+-- Update-Database
 -- Cái này cho VS Code
---dotnet ef database update
+-- dotnet ef database update
 
 -- --------------------------------------------------------
 

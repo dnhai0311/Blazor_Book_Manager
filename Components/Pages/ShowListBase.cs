@@ -21,13 +21,13 @@ namespace Blazor_BookSale_Manager.Components.Pages
         [Inject]
         public required IJSRuntime JS { get; set; }
 
-        public string SearchTerm = string.Empty;
-        public string searchTerm
+        public string SearchText = string.Empty;
+        public string searchText
         {
-            get => SearchTerm;
+            get => SearchText;
             set
             {
-                SearchTerm = value;
+                SearchText = value;
                 currentPage = 1;
                 UpdatePaged();
             }
@@ -71,18 +71,29 @@ namespace Blazor_BookSale_Manager.Components.Pages
                 _ => string.Empty
             };
         }
-
         public List<object> filteredItems =>
-             string.IsNullOrEmpty(searchTerm) ?
-                 items :
-                 items.Where(item => GetItemTitle(item).Unidecode()
-                 .Contains(searchTerm.Unidecode(), StringComparison.OrdinalIgnoreCase))
-                     .ToList();
+            items.Where(item => string.IsNullOrEmpty(searchText) ||
+            GetItemTitle(item).Unidecode().Contains(searchText.Unidecode(), StringComparison.OrdinalIgnoreCase))
+            .ToList();
+
         public List<object> pagedItems =>
             filteredItems
                 .Skip((CurrentPage - 1) * pageSize)
                 .Take(PageSize)
                 .ToList();
+
+        public bool IsModalVisible { get; set; }
+        public Bill? SelectedBill { get; set; }
+        public async Task ShowBillDetails(int billId)
+        {
+            SelectedBill = await bookSaleRepository.GetAllBillDetailsByBillId(billId);
+            IsModalVisible = true;
+        }
+
+        public void CloseModal(bool isVisible)
+        {
+            IsModalVisible = isVisible;
+        }
         protected override async Task OnInitializedAsync()
         {
             if (Type == "booksales")
@@ -94,7 +105,13 @@ namespace Blazor_BookSale_Manager.Components.Pages
             {
                 var authors = await bookSaleRepository.GetAllAuthors();
                 items.AddRange(authors);
-            } else if (AuthorId.HasValue)
+            }
+            else if (Type == "bills")
+            {
+                var bills = await bookSaleRepository.GetAllBills();
+                items.AddRange(bills);
+            }
+            else if (AuthorId.HasValue)
             {
                 Type = "booksales";
                 var bookSales = await bookSaleRepository.GetAllBookSalesFromAuthor(AuthorId ?? 0);
