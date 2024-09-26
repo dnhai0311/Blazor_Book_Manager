@@ -5,18 +5,34 @@ namespace Blazor_BookSale_Manager.Repositories
 {
     public class BookSaleRepository : IBookSaleRepository
     {
-        BookSalesContext bookSaleContext;
+        BookSalesContext bookSalesContext;
         public BookSaleRepository(BookSalesContext context)
         {
-            this.bookSaleContext = context;
+            this.bookSalesContext = context;
         }
         public async Task<List<BookSale>> GetAllBookSales()
         {
-            return await this.bookSaleContext.BookSales.ToListAsync();
+            return await this.bookSalesContext.BookSales
+                .Include(sale => sale.Author)
+                .ToListAsync();
         }
+        public async Task<List<BookSale>> GetAllBookSalesFromAuthor(int authorId)
+        {
+            var author = await this.bookSalesContext.Authors
+                .Include(a => a.BookSales)
+                .FirstOrDefaultAsync(a => a.Id == authorId);
+
+            return author?.BookSales.ToList() ?? new List<BookSale>();
+        }
+
+        public async Task<List<Author>> GetAllAuthors()
+        {
+            return await this.bookSalesContext.Authors.ToListAsync();
+        }
+
         public async Task<BookSale> GetBookSaleById(int id)
         {
-            var bookSale = await this.bookSaleContext.BookSales.FindAsync(id);
+            var bookSale = await this.bookSalesContext.BookSales.FindAsync(id);
 
             if (bookSale == null)
             {
@@ -28,29 +44,65 @@ namespace Blazor_BookSale_Manager.Repositories
 
         public async Task AddBookSale(BookSale bookSale)
         {
-            this.bookSaleContext.Add(bookSale);
-            await this.bookSaleContext.SaveChangesAsync();
+            this.bookSalesContext.Add(bookSale);
+            await this.bookSalesContext.SaveChangesAsync();
         }
         public async Task UpdateBookSale(BookSale bookSale)
         {
-            var existingBookSale = await bookSaleContext.BookSales.FindAsync(bookSale.Id);
+            var existingBookSale = await bookSalesContext.BookSales.FindAsync(bookSale.Id);
             if (existingBookSale != null)
             {
                 existingBookSale.Title = bookSale.Title;
                 existingBookSale.Quantity = bookSale.Quantity;
                 existingBookSale.Price = bookSale.Price;
-                await bookSaleContext.SaveChangesAsync();
+                await bookSalesContext.SaveChangesAsync();
             }
         }
         public async Task DeleteBookSale(int id)
         {
-            var bookSale = await bookSaleContext.BookSales.FindAsync(id);
+            var bookSale = await bookSalesContext.BookSales.FindAsync(id);
             if (bookSale != null)
             {
-                bookSaleContext.BookSales.Remove(bookSale);
-                await bookSaleContext.SaveChangesAsync();
+                bookSalesContext.BookSales.Remove(bookSale);
+                await bookSalesContext.SaveChangesAsync();
             }
         }
 
+
+        public async Task<Author> GetAuthorById(int id)
+        {
+            var author = await this.bookSalesContext.Authors.FindAsync(id);
+
+            if (author == null)
+            {
+                throw new($"BookSale với ID: {id} không thấy.");
+            }
+
+            return author;
+        }
+
+        public async Task AddAuthor(Author author)
+        {
+            this.bookSalesContext.Add(author);
+            await this.bookSalesContext.SaveChangesAsync();
+        }
+        public async Task UpdateAuthor(Author author)
+        {
+            var existingAuthor = await bookSalesContext.Authors.FindAsync(author.Id);
+            if (existingAuthor != null)
+            {
+                existingAuthor.AuthorName = author.AuthorName;
+                await bookSalesContext.SaveChangesAsync();
+            }
+        }
+        public async Task DeleteAuthor(int id)
+        {
+            var author = await bookSalesContext.Authors.FindAsync(id);
+            if (author != null)
+            {
+                bookSalesContext.Authors.Remove(author);
+                await bookSalesContext.SaveChangesAsync();
+            }
+        }
     }
 }

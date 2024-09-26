@@ -2,41 +2,38 @@
 using Blazor_BookSale_Manager.Repositories;
 using Blazor_BookSale_Manager.Models;
 
-
 namespace Blazor_BookSale_Manager.Components.Pages
 {
-    public class AddBookSaleBase : ComponentBase
+    public class AddAuthorBase : ComponentBase
     {
         [Inject]
-        public required IBookSaleRepository bookSaleRepository { get; set; }
+        public required IBookSaleRepository bookSaleRepository { get; set; } 
         [Inject]
         public required NavigationManager navigationManager { get; set; }
         [Parameter]
         public int? Id { get; set; }
 
-        public BookSale bookSale { get; set; } = new BookSale();
-        public List<Author> authors { get; set; } = new List<Author>();
+        public Author author { get; set; } = new Author();
 
         protected override async Task OnInitializedAsync()
         {
             if (Id.HasValue)
             {
-                bookSale = await bookSaleRepository.GetBookSaleById(Id.Value);
+                author = await bookSaleRepository.GetAuthorById(Id.Value);
             }
-            authors = await bookSaleRepository.GetAllAuthors();
         }
 
         public async Task HandleValidSubmit()
         {
-            if (bookSale.Id == 0)
+            if (author.Id == 0)
             {
-                await bookSaleRepository.AddBookSale(bookSale);
+                await bookSaleRepository.AddAuthor(author); 
             }
             else
             {
-                await bookSaleRepository.UpdateBookSale(bookSale);
+                await bookSaleRepository.UpdateAuthor(author); 
             }
-            navigationManager.NavigateTo("/booksales/all");
+            navigationManager.NavigateTo("/authors/all"); 
         }
     }
 }

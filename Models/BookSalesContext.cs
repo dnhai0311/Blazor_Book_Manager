@@ -9,5 +9,6 @@ namespace Blazor_BookSale_Manager.Models
         {
         }
         public DbSet<BookSale> BookSales { get; set; }
+        public DbSet<Author> Authors { get; set; }
     }
 }
