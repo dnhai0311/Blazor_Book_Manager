@@ -1,9 +1,8 @@
 --B1: Mở XAMPP lên tạo Database
 -- razor_book_manager
 --B2: Nếu xài Studio thì Tools -> NuGet... -> ...Console
---Add-Migration createTable -> Update-Database
+--Update-Database
 -- Cái này cho VS Code
---dotnet ef migrations add createTable
 --dotnet ef database update
 
 -- --------------------------------------------------------
