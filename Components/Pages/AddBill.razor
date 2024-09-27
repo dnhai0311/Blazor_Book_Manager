@@ -33,6 +33,11 @@
         <InputNumber @bind-Value="quantity" class="form-control" disabled="@(selectedBookSaleId == 0)" onkeydown="return event.key !== 'Enter'" />
     </div>
 
+    <div class="form-check mb-3">
+        <InputCheckbox @bind-Value="isDiscountApplied" class="form-check-input" />
+        <label class="form-check-label">Giảm 10% hóa đơn</label>
+    </div>
+
     <button type="button" @onclick="AddBookToBill" class="btn btn-success" disabled="@(selectedBookSaleId == 0)">Thêm sách</button>
 
     <h4 class="mt-4">Chi tiết hóa đơn</h4>
@@ -41,12 +46,11 @@
         {
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 @detail.BookSale.Title - Số lượng: @detail.Quantity.ToString("n0") - Giá: @detail.Price.ToString("c0")
-                <button @onclick="(() => RemoveBookFromBill(detail))" class="btn btn-danger btn-sm">Xóa</button>
+                <button type="button" @onclick="(() => RemoveBookFromBill(detail))" class="btn btn-danger btn-sm">Xóa</button>
             </li>
         }
     </ul>
 
-    <p><strong>Tổng tiền:</strong> @bill.TotalPrice.ToString("c0")</p>
-
+    <p><strong>Tổng tiền:</strong> @totalPriceWithDiscount.ToString("c0")</p>
     <button type="submit" class="btn btn-primary" disabled="@(bill.BillDetails.Count() == 0 )">Tạo hóa đơn</button>
 </EditForm>

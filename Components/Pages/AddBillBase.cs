@@ -19,11 +19,14 @@ namespace Blazor_BookSale_Manager.Components.Pages
         public int quantity;
         public string searchText = string.Empty;
         public string ValidationMessage { get; set; } = string.Empty;
+        public bool isDiscountApplied { get; set; } = false;
+        public double totalPriceWithDiscount => isDiscountApplied ? bill.TotalPrice * 0.9 : bill.TotalPrice;
 
         public List<BookSale> filteredBookSales =>
             bookSales.Where(bs => string.IsNullOrEmpty(searchText) ||
             bs.Title.Unidecode().Contains(searchText.Unidecode(), StringComparison.OrdinalIgnoreCase))
             .ToList();
+
         protected override async Task OnInitializedAsync()
         {
             bookSales = await bookSaleRepository.GetAllBookSales();
@@ -36,40 +39,59 @@ namespace Blazor_BookSale_Manager.Components.Pages
                 ValidationMessage = "Số lượng phải lớn hơn 0";
                 return;
             }
+
             var selectedBookSale = bookSales.FirstOrDefault(bs => bs.Id == selectedBookSaleId);
             if (selectedBookSale == null) return;
 
-            if (quantity > selectedBookSale.Quantity)
+            var existingBillDetail = bill.BillDetails.FirstOrDefault(bd => bd.BookSale.Id == selectedBookSale.Id);
+
+            if (existingBillDetail != null)
             {
-                ValidationMessage = $"Số lượng không đủ cho sách: {selectedBookSale.Title}" +
-                    $". Có sẵn: {selectedBookSale.Quantity}, Yêu cầu: {quantity}.";
+                if (existingBillDetail.Quantity + quantity > selectedBookSale.Quantity)
+                {
+                    ValidationMessage = $"Số lượng không đủ cho sách: {selectedBookSale.Title}. " +
+                        $"Có sẵn: {selectedBookSale.Quantity}, Yêu cầu: {existingBillDetail.Quantity + quantity}.";
+                    return;
+                }
+
+                existingBillDetail.Quantity += quantity;
+                existingBillDetail.Price = existingBillDetail.Quantity * selectedBookSale.Price;
+
+                bill.TotalPrice += selectedBookSale.Price * quantity;
+
+                ValidationMessage = string.Empty;
+                quantity = 0;
+                selectedBookSaleId = 0;
+
                 return;
             }
-
-            if (bill.BillDetails.Any(bd => bd.BookSale.Title == selectedBookSale.Title))
+            else
             {
-                ValidationMessage = $"Sách '{selectedBookSale.Title}' đã có trong hóa đơn.";
-                return;
+                if (quantity > selectedBookSale.Quantity)
+                {
+                    ValidationMessage = $"Số lượng không đủ cho sách: {selectedBookSale.Title}. " +
+                        $"Có sẵn: {selectedBookSale.Quantity}, Yêu cầu: {quantity}.";
+                    return;
+                }
+
+                var billDetail = new BillDetail
+                {
+                    BookSaleId = selectedBookSale.Id,
+                    BookSale = selectedBookSale,
+                    Quantity = quantity,
+                    Price = selectedBookSale.Price * quantity
+                };
+
+                await Task.Run(() =>
+                {
+                    bill.BillDetails.Add(billDetail);
+                    bill.TotalPrice += billDetail.Price;
+                });
             }
-
-            var billDetail = new BillDetail
-            {
-                BookSaleId = selectedBookSale.Id,
-                BookSale = selectedBookSale,
-                Quantity = quantity,
-                Price = selectedBookSale.Price * quantity
-            };
-
-            await Task.Run(() =>
-            {
-                bill.BillDetails.Add(billDetail);
-                bill.TotalPrice += billDetail.Price;
-            });
 
             ValidationMessage = string.Empty;
             quantity = 0;
             selectedBookSaleId = 0;
-
         }
 
         public void RemoveBookFromBill(BillDetail detail)
@@ -85,11 +107,9 @@ namespace Blazor_BookSale_Manager.Components.Pages
                 ValidationMessage = "Vui lòng thêm ít nhất một sách vào hóa đơn.";
                 return;
             }
-
+            bill.TotalPrice = totalPriceWithDiscount;
             await bookSaleRepository.AddBill(bill);
-
             navigationManager.NavigateTo("/bills/all");
         }
-
     }
 }
