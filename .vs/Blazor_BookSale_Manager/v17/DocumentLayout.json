@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\Codes\\Blazor_Book_Manager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\showlistbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|solutionrelative:components\\pages\\showlistbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\showlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|solutionrelative:components\\pages\\showlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\addbill.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|solutionrelative:components\\pages\\addbill.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\addauthorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|solutionrelative:components\\pages\\addauthorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\showlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|solutionrelative:components\\pages\\showlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB540131-39A5-4343-8BD7-40DF51677A95}|Blazor_BookSale_Manager.csproj|d:\\codes\\blazor_book_manager\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -70,11 +74,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "ShowListBase.cs",
+              "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\ShowListBase.cs",
+              "RelativeDocumentMoniker": "Components\\Pages\\ShowListBase.cs",
+              "ToolTip": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\ShowListBase.cs",
+              "RelativeToolTip": "Components\\Pages\\ShowListBase.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAcwFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T17:31:32.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
@@ -82,12 +99,11 @@
               "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-27T02:59:32.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T02:59:32.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AddBillBase.cs",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddBillBase.cs",
               "RelativeDocumentMoniker": "Components\\Pages\\AddBillBase.cs",
@@ -95,12 +111,11 @@
               "RelativeToolTip": "Components\\Pages\\AddBillBase.cs",
               "ViewState": "AgIAAGUAAAAAAAAAAAAQwG0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T17:29:21.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-26T17:29:21.375Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AddBookSale.razor",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddBookSale.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AddBookSale.razor",
@@ -108,12 +123,11 @@
               "RelativeToolTip": "Components\\Pages\\AddBookSale.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-26T17:36:57.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-26T17:36:57.569Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AddBill.razor",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddBill.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AddBill.razor",
@@ -126,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "BillDetailModal.razor",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\BillDetailModal.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\BillDetailModal.razor",
@@ -134,12 +148,11 @@
               "RelativeToolTip": "Components\\Pages\\BillDetailModal.razor",
               "ViewState": "AgIAAAQAAAAAAAAAAAAqwBIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-26T18:27:03.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-26T18:27:03.259Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Home.razor",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
@@ -151,20 +164,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "ShowList.razor",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\ShowList.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\ShowList.razor",
               "ToolTip": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\ShowList.razor",
               "RelativeToolTip": "Components\\Pages\\ShowList.razor",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAIYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-26T18:28:19.728Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "AddAuthor.razor",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddAuthor.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AddAuthor.razor",
@@ -172,12 +185,11 @@
               "RelativeToolTip": "Components\\Pages\\AddAuthor.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-26T17:40:00.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-26T17:40:00.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AddAuthorBase.cs",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddAuthorBase.cs",
               "RelativeDocumentMoniker": "Components\\Pages\\AddAuthorBase.cs",
@@ -185,12 +197,11 @@
               "RelativeToolTip": "Components\\Pages\\AddAuthorBase.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAqwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T17:40:56.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-26T17:40:56.114Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "BookSale.cs",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Models\\BookSale.cs",
               "RelativeDocumentMoniker": "Models\\BookSale.cs",
@@ -202,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "BookSaleRepository.cs",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Repositories\\BookSaleRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\BookSaleRepository.cs",
@@ -214,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Author.cs",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Models\\Author.cs",
               "RelativeDocumentMoniker": "Models\\Author.cs",
@@ -226,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "BillDetail.cs",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Models\\BillDetail.cs",
               "RelativeDocumentMoniker": "Models\\BillDetail.cs",
@@ -238,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "AddBookSaleBase.cs",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Components\\Pages\\AddBookSaleBase.cs",
               "RelativeDocumentMoniker": "Components\\Pages\\AddBookSaleBase.cs",
@@ -250,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "IBookSaleRepository .cs",
               "DocumentMoniker": "D:\\Codes\\Blazor_Book_Manager\\Repositories\\IBookSaleRepository .cs",
               "RelativeDocumentMoniker": "Repositories\\IBookSaleRepository .cs",
